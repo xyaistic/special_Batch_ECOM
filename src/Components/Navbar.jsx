@@ -18,9 +18,7 @@ const Navbar = () => {
           <Link to="/product">
             <li className="hover:text-orange-500">Product</li>
           </Link>
-          <li className="  border-2-black rounded-xl hover:border-orage-600  p-1 f-w-">
-            <input type="text" placeholder="Search Here" />
-          </li>
+          
           
           <Link to="/allCategory">
             <li className="hover:text-orange-500">All Category</li>
