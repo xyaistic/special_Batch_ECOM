@@ -30,12 +30,22 @@ export default function Home() {
   return (
     <div>
       <section>
-        <img src={img} className='h-full w-full	' />
+        
+<div className="relative flex">
+  <img src={img} className="h-[90vh] w-full object-cover" />
+  
+</div>
 
+<div>
         <a href='./cart'>
-        <button className='border-2 rounded-lg bg-white p-1 font-semibold btn  mt-15 btn w-52 border-2 hover:border-black order-btn'> ORDER NOW</button>
+        <h1 className="absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2 text-black text-5xl font-bold ">
+    Up to 50% Off Best-Selling Fashion Items
+    <br /> Deep Discounts on Past Seasons Clothing
+  </h1>
+  
+        <button className="border-2 rounded-lg bg-white p-2 hover:border-orange-500 absolute bottom-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-black text-2xl font-bold "> ORDER NOW</button>
         </a>
-
+</div>
       </section>
 
       <section className=''>
