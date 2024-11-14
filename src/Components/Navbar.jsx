@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       <div className="flex bg-white justify-between items-center h-[10vh]">
-        <h1 className="text-orange-600 m-10 text-2xl font-bold ">Navbar</h1>
+        <h1 className="text-orange-600 m-10 text-2xl font-bold ">AMAZON</h1>
         <ul className=" flex font-400 text-black gap-10 mr-9 text-[17px]  ">
           <Link to="/">
             <li className="hover:text-orange-500">Home</li>
@@ -18,10 +18,7 @@ const Navbar = () => {
           <Link to="/product">
             <li className="hover:text-orange-500">Product</li>
           </Link>
-          <li className="  border-2-black rounded-xl hover:border-orage-600  p-1 f-w-">
-            <input type="text" placeholder="Search Here" />
-          </li>
-          
+      
           <Link to="/allCategory">
             <li className="hover:text-orange-500">All Category</li>
           </Link>
@@ -39,6 +36,9 @@ const Navbar = () => {
             <li className="flex items-center gap-2 hover:text-orange-500 ">
               <CgProfile className="size-7" />
             </li>
+          </Link>
+          <Link to="/registration">
+            <li className="hover:text-orange-500">Registration</li>
           </Link>
         </ul>
       </div>
