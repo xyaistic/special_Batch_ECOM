@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <div className="flex bg-white justify-between items-center h-[10vh]">
+      <div className="flex bg-white justify-between items-center h-[8vh]">
         <h1 className="text-orange-600 m-10 text-2xl font-bold ">Amazon</h1>
         <ul className=" flex font-400 text-black gap-10 mr-9 text-[17px]  ">
           <Link to="/home">
