@@ -13,7 +13,7 @@ const Navbar = () => {
         <h1 className="text-orange-600 m-10 text-2xl font-bold ">Amazon</h1>
         <ul className=" flex font-400 text-black gap-10 mr-9 text-[17px]  ">
           <Link to="/home">
-            <li className="hover:text-orange-500">Home</li>
+            <li className="underline-offset-[3px] hover:text-orange-500">Home</li>
           </Link>
           <Link to="/product">
             <li className="hover:text-orange-500">Product</li>
@@ -40,7 +40,7 @@ const Navbar = () => {
               <CgProfile className="size-6" />
             </li>
           </Link>
-          <Link to="/"> <li className="flex items-center gap-2 hover:text-orange-500">Log in</li> </Link>
+          <Link to="/login"> <li className="flex items-center gap-2 hover:text-orange-500">Log in</li> </Link>
         </ul>
       </div>
     </>
