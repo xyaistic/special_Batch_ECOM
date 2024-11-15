@@ -8,6 +8,7 @@ import Profile from './Components/Profile'
 import WishList from './Components/WishList'
 import Category from './Components/Category'
 import Registration from './Components/Registration'
+import SingleProduct from './Components/SingleProduct'
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route path='/profile' element={<Profile/>}  />
         <Route path='/wishlist' element={<WishList/>}  />
         <Route path='/allCategory' element={<Category/>} />
+        <Route path='/SingleProduct' element={<SingleProduct/>} />
        
         <Route path='/registration' element={<Registration/>} />
       </Routes>

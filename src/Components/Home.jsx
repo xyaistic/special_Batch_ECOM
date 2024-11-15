@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import img from "../assets/Img/img.png"
-import { BaseUrl, Product ,getCategories} from "../assets/Constant/Api";
+import { BaseUrl, getAllProduct ,getCategories} from "../Constant/Api.js";
 import axios from "axios";
 import HomeProduct from "./HomeProduct.jsx";
 import "./Style.css"
@@ -17,15 +17,15 @@ export default function Home() {
 
   const fetchData = async () => {
     try {
-      let response = await axios.get(`${BaseUrl}${Product}${getCategories}`);
+      let response = await axios.get(`${BaseUrl}${getAllProduct}`);
       console.log(response.data);
-      setData(response.data)
+      // setData(response.data)
     } catch (error) {
       console.log(error);
     }
   };
 
-  console.log(data);
+  // console.log(data);
 
   return (
 <div>

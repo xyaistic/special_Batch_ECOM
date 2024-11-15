@@ -1,7 +1,7 @@
 import React ,  { useEffect, useState } from 'react';
 import HomeProduct from "./HomeProduct.jsx";
 import axios from "axios";
-import { BaseUrl, Product ,getCategories} from "../assets/Constant/Api";
+import { BaseUrl, getAllProduct  ,getCategories} from "../Constant/Api.js";
 
 
 
@@ -16,9 +16,9 @@ const Category = () => {
 
   const fetchData = async () => {
     try {
-      let response = await axios.get(`${BaseUrl}${Product}${getCategories}`);
+      let response = await axios.get(`${BaseUrl}${getAllProduct}`);
       console.log(response.data);
-      setData(response.data)
+      // setData(response.data)
     } catch (error) {
       console.log(error);
     }
