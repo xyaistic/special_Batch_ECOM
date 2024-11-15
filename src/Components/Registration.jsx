@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const RegistrationPage = () => {
@@ -79,6 +79,10 @@ console.log(localStorage.getItem("password"));
             />
             {errors.confirmPassword && <p className="mt-2 text-xs text-red-500">{errors.confirmPassword.message}</p>}
           </div>
+          <div class="mb-6">                  
+              <Link to="/login"><p >Already have an account ? <span className="text-indigo-500" >log in</span></p></Link>              
+          </div>
+
           <button
             type="submit"
             className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">Register</button>
