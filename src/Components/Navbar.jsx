@@ -10,9 +10,9 @@ const Navbar = () => {
   return (
     <>
       <div className="flex bg-white justify-between items-center h-[8vh]">
-        <h1 className="text-orange-600 m-10 text-2xl font-bold ">Amazon</h1>
+        <Link to="/"><h1 className="text-orange-600 m-10 text-2xl font-bold ">Amazon</h1></Link>
         <ul className=" flex font-400 text-black gap-10 mr-9 text-[17px]  ">
-          <Link to="/home">
+          <Link to="/">
             <li className="underline-offset-[3px] hover:text-orange-500">Home</li>
           </Link>
           <Link to="/product">
@@ -40,7 +40,12 @@ const Navbar = () => {
               <CgProfile className="size-6" />
             </li>
           </Link>
-          <Link to="/login"> <li className="flex items-center gap-2 hover:text-orange-500">Log in</li> </Link>
+          {/* <Link to="/registration">
+            <li className="hover:text-orange-500">Registration</li>
+          </Link> */}
+          <Link to="/login">
+            <li className="hover:text-orange-500">Login</li>
+          </Link>
         </ul>
       </div>
     </>
