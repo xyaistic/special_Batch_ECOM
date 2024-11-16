@@ -9,8 +9,7 @@ const RegistrationPage = () => {
 
   const onSubmit = (data) => {
     console.log("Form Data:", data);
-    localStorage.setItem("email",data.email);
-    localStorage.setItem("password",data.password);
+  
     reset();
     navigate('/login');
   };

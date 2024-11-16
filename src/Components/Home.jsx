@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import img from "../assets/Img/img.png"
-import { BaseUrl, getAllProduct ,getCategories} from "../Constant/Api.js";
+import { BaseUrl, getAllProduct ,getCategories} from "../constant/Api.js";
 import axios from "axios";
 import HomeProduct from "./HomeProduct.jsx";
 import "./Style.css"
