@@ -24,12 +24,13 @@ const Login = () => {
     const email = reg.email;
     const pass = reg.password;
     
-    if (email == fEmail && pass == fPass ) {
-      console.log("verified");
-      navigate("/");
-    } else {
-      console.log("invalid credential");
-    }
+    
+    // if (email == fEmail && pass == fPass ) {
+    //   console.log("verified");
+    //   navigate("/");
+    // } else {
+    //   console.log("invalid credential");
+    // }
   }
 
 

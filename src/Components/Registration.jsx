@@ -9,17 +9,17 @@ const RegistrationPage = () => {
 
   const onSubmit = (data) => {
     console.log("Form Data:", data);
-  
+
     reset();
     navigate('/login');
   };
-console.log(localStorage.getItem("email"));
-console.log(localStorage.getItem("password"));
+  // console.log(localStorage.getItem("email"));
+  // console.log(localStorage.getItem("password"));
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 bg-white shadow-md rounded-lg">
         <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">Register</h2>
-        <form onSubmit={handleSubmit(onSubmit)}> 
+        <form onSubmit={handleSubmit(onSubmit)}>
 
           <div className="mb-4">
             <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username</label>
@@ -78,8 +78,8 @@ console.log(localStorage.getItem("password"));
             />
             {errors.confirmPassword && <p className="mt-2 text-xs text-red-500">{errors.confirmPassword.message}</p>}
           </div>
-          <div class="mb-6">                  
-              <Link to="/login"><p >Already have an account ? <span className="text-indigo-500" >log in</span></p></Link>              
+          <div class="mb-6">
+            <Link to="/login"><p >Already have an account ? <span className="text-indigo-500" >log in</span></p></Link>
           </div>
 
           <button

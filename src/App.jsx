@@ -10,6 +10,7 @@ import Login from "./Components/Login";
 import Layout from "./Components/Layout";
 import RegistrationPage from "./Components/Registration";
 // import Authentication from "./Components/authentication";
+import PlaceOrder from "./Components/PlaceOrder";
 
 function App() {
   // let token = localStorage.getItem("token");
@@ -27,7 +28,7 @@ function App() {
         <Route path="/allCategory" element={ <Category /> } />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<RegistrationPage/>}/>
-
+        <Route path="/placeorder" element={<PlaceOrder/>}/>
       </Routes>
     </>
   );

@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
   return (
     <div>
-      CART
+      <Link to={PlaceOrder}>
+      <button className='text-red'>click me</button>
+      </Link>
     </div>
   )
 }
