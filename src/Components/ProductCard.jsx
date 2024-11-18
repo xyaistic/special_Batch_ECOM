@@ -1,19 +1,28 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom"
-
 import { Link } from 'react-router-dom';
 import { BaseUrl } from '../Constant/Api';
-// const navigate = useNavigate()
+import SingleProduct from './SingleProduct'
+
 
 function ProductCard({ product }) {
-  const handleAddToCart = () => {
 
-  };
+  const navigate = useNavigate();
+  
+
+    function SingleProduct (SingleProduct){
+      console.log("hello world");
+      navigate('/SingleProduct', {state: {SingleProduct: SingleProduct}})
+    }
+
+
   let token = "token"
 
   return (
-    <>
-
+  
+ <>
+        
+      
       <div className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl flex flex-col justify-between">
         <div className='justify-center items-center'>
           <img src={`${BaseUrl}${product.image}`} alt={product.title} className="w-full h-32 object-cover mb-4 rounded" />
@@ -23,14 +32,14 @@ function ProductCard({ product }) {
           {/* <h1>{product.product_description}</h1> */}
           <h1>{product.price}</h1>
         </div>
-        <Link to="/SingleProduct">
+        
         <button
-        onClick={handleAddToCart}
+        onClick={()=>SingleProduct(product)}
         className="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-200"
       >
         Details
       </button> 
-      </Link>
+    
 
         {/* {
           token !== null ? (<>navigate("/cart")
@@ -39,6 +48,7 @@ function ProductCard({ product }) {
           
           </>)} */}
       </div>
+    
     </>
   );
 }
