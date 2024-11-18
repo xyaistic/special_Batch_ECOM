@@ -1,6 +1,8 @@
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom";
+import { BaseUrl,createUser } from "../constant/Api";
 
 
 const RegistrationPage = () => {
@@ -8,13 +10,26 @@ const RegistrationPage = () => {
   const { register, handleSubmit, formState: { errors }, reset, watch } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Form Data:", data);
-  
+
+    console.log("Form Data:",);
+
+      const userData = {
+      username: data.username,
+      email: data.email,
+      password: data.password
+     }  
+  console.log(userData)
     reset();
     navigate('/login');
   };
-console.log(localStorage.getItem("email"));
-console.log(localStorage.getItem("password"));
+
+  const registerUser = async ()=>{
+    try{
+    await axios.post(`${BaseUrl}${createUser}`)
+    }  catch(error){
+      console.log("error: ",error);
+    }  
+  }
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 bg-white shadow-md rounded-lg">
@@ -64,26 +79,12 @@ console.log(localStorage.getItem("password"));
             {errors.password && <p className="mt-2 text-xs text-red-500">{errors.password.message}</p>}
           </div>
 
-          <div className="mb-6">
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">Confirm Password</label>
-            <input
-              id="confirmPassword"
-              type="password"
-              className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'}`}
-              {...register("confirmPassword", {
-                required: "Confirm Password is required",
-                validate: (value) =>
-                  value === watch("password") || "Passwords do not match"
-              })}
-            />
-            {errors.confirmPassword && <p className="mt-2 text-xs text-red-500">{errors.confirmPassword.message}</p>}
-          </div>
           <div class="mb-6">                  
               <Link to="/login"><p >Already have an account ? <span className="text-indigo-500" >log in</span></p></Link>              
           </div>
 
-          <button
-            type="submit"
+          <button onClick={()=> registerUser()}
+            type="submit" 
             className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">Register</button>
         </form>
       </div>
