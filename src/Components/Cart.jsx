@@ -1,6 +1,11 @@
-import React from 'react'
+import axios from "axios"
+import React, { useEffect, useState } from 'react'
+import { BaseUrl, getCart } from "../Constant/Api"
 
-const Cart = () => {
+export default function Cart () {
+
+  
+  
   return (
     <div>
       
@@ -8,4 +13,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+

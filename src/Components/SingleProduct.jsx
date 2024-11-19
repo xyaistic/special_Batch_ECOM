@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { addItemTocart, BaseUrl ,} from '../Constant/Api';
+import ConfirmedOrder from './ConfirmedOrder';
 
 
 export default function SingleProduct() {
@@ -83,6 +84,7 @@ className="w-full h-32 object-cover mb-4 rounded" />
       }
       </div>
       </div>
+    
     </>
   )
 
