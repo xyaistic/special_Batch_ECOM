@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoCart } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { CiHeart } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
-
-const deleteToken = () => {
-  localStorage.removeItem("accessToken")
-  console.log('deleted token')
-}
-
-const access = localStorage.getItem("accessToken");
-
 const Navbar = () => {
+
+  // const [token,setToken] = useState()
+  // console.log(token)
+
+  // const access = localStorage.getItem("accessToken")
+  // setToken(access)
+  // console.log(access,'kkkkk')
+  // // setToken(access);
+
+  const deleteToken = () => {
+    localStorage.removeItem("accessToken")
+    alert('deleted token')
+    // setToken("");
+  }
+
+ const token = localStorage.getItem("accessToken")
+
+
   return (
     <>
       <div className="flex bg-white justify-between items-center h-[8vh]">
         <Link to="/"><h1 className="text-orange-600 m-10 text-2xl font-bold ">Amazon</h1></Link>
         <ul className=" flex font-400 text-black gap-10 mr-9 text-[17px]  ">
-          <Link to="/">
+          <Link to="/home">
             <li className="underline-offset-[3px] hover:text-orange-500">Home</li>
           </Link>
           <Link to="/product">
@@ -49,7 +59,7 @@ const Navbar = () => {
           {/* <Link to="/registration">
             <li className="hover:text-orange-500">Registration</li>
           </Link> */}
-          {access != null ? (
+          {token != null ? (
             <>
               <li className="hover:text-orange-500-xl" onClick={() => deleteToken()}>
                 Log out

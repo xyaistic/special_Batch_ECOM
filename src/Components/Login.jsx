@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { BaseUrl, userLogin } from "../constant/Api";
+import { jwtDecode } from "jwt-decode";
 
 
 const Login = () => {
@@ -33,7 +34,10 @@ const Login = () => {
       const accessToken = res.data.access
       console.log(accessToken)
       localStorage.setItem('accessToken',accessToken);
-      // localStorage.getItem()
+      const decodeToken = jwtDecode(accessToken)
+
+      // localStorage.setItem('userId',decode.user_id)
+      console.log(decodeToken)
       accessToken != null ? navigate('/') : navigate('/login');
     } catch(error){
       console.log(error)
@@ -44,14 +48,7 @@ const Login = () => {
   const login = () =>{
     const email = reg.email;
     const pass = reg.password;
-    
-    
-    // if (email == fEmail && pass == fPass ) {
-    //   console.log("verified");
-    //   navigate("/");
-    // } else {
-    //   console.log("invalid credential");
-    // }
+
   }
 
 

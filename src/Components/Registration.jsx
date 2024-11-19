@@ -17,7 +17,7 @@ try {
       username: data.username,
       email: data.email,
       password: data.password,
-      contact: data.phone_number,
+      phone: data.phone_number,
       address: data.address,
       first_name: data.first_name,
       last_name: data.last_name,
@@ -152,7 +152,7 @@ try {
             <Link to="/login"><p >Already have an account ? <span className="text-indigo-500" >log in</span></p></Link>
           </div>
 
-          <button onClick={() => registerUser()}
+          <button
             type="submit"
             className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">Register</button>
         </form>

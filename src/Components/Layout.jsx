@@ -3,16 +3,18 @@ import Navbar from './Navbar'
 import { useNavigate } from 'react-router-dom'
 
 const Layout = () => {
-const token = sessionStorage.getItem("token");
-// const navigate = useNavigate();
+// const token = sessionStorage.getItem("token");
+// // const navigate = useNavigate();
+// const access = localStorage.getItem("accessToken");
 
   return (
     <>
-    {
-        <Navbar/>
-        // token === "token" ? <Navbar/> : navigate("/login")
-    }
-      
+    {/* { access != null ? <>(<Navbar/>)</> : <>()</>
+        // 
+       
+    } */}
+    
+      <Navbar/>
     </>
   )
 }
