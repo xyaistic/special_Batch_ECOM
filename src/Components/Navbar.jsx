@@ -5,6 +5,12 @@ import { CiHeart } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
 
+const deleteToken = () => {
+  localStorage.removeItem("accessToken")
+  console.log('deleted token')
+}
+
+const access = localStorage.getItem("accessToken");
 
 const Navbar = () => {
   return (
@@ -21,7 +27,7 @@ const Navbar = () => {
           {/* <li className="  border-2-black rounded-xl hover:border-orage-600  p-1 f-w-">
             <input type="text" placeholder="Search Here" />
           </li> */}
-          
+
           <Link to="/allCategory">
             <li className="hover:text-orange-500">All Category</li>
           </Link>
@@ -43,9 +49,18 @@ const Navbar = () => {
           {/* <Link to="/registration">
             <li className="hover:text-orange-500">Registration</li>
           </Link> */}
-          <Link to="/login">
-            <li className="hover:text-orange-500">Login</li>
-          </Link>
+          {access != null ? (
+            <>
+              <li className="hover:text-orange-500-xl" onClick={() => deleteToken()}>
+                Log out
+              </li>
+            </>
+          ) : (<>
+              <Link to="/login">
+               <li className="hover:text-orange-500">Login</li>
+            </Link>
+            </>
+          )}
         </ul>
       </div>
     </>

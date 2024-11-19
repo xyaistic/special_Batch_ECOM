@@ -1,9 +1,14 @@
 import React, { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { BaseUrl, userLogin } from "../constant/Api";
+
+
 const Login = () => {
   const [reg,setReg] = useState([]);
   const navigate = useNavigate();
+
 
   
   const fEmail = "rehan@gmail.com";
@@ -15,8 +20,24 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     setReg(data)
+    const userData = {
+      username: data.username,
+      password: data.password
+    }
+
+    try{
+    const res = await axios.post(`${BaseUrl}${userLogin}`,userData)
+      console.log(res);
+      const accessToken = res.data.access
+      console.log(accessToken)
+      localStorage.setItem('accessToken',accessToken);
+      // localStorage.getItem()
+      accessToken != null ? navigate('/') : navigate('/login');
+    } catch(error){
+      console.log(error)
+    }
     
   };
 
@@ -47,20 +68,20 @@ const Login = () => {
                     class="block text-sm font-medium text-gray-700"
                     htmlFor="email"
                   >
-                    Email
+                    username
                   </label>
                   <input className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
-                    type="email"
-                    placeholder="Enter Email"
-                    {...register("email", {
+                    type="username"
+                    placeholder="Enter username"
+                    {...register("username", {
                       required: true,
                       pattern: {
-                        message: "Invalid email format",
+                        message: "Invalid username format",
                       },
                     })}
                   />
-                  {errors.email && (
-                    <span className="error">{errors.email.message}</span>
+                  {errors.username && (
+                    <span className="error">{errors.username.message}</span>
                   )}
                 </div>
                 <div class="mb-4">
