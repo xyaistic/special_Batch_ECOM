@@ -17,9 +17,10 @@ function App() {
 
   return (
     <>
-    {/* <Navbar/> */}
+    
+    <Layout/>
       <Routes>
-        <Route path="/" element={<Layout/>}/>
+        {/* <Route path="/" element={<Layout/>}/> */}
         <Route path="/home"element={<Home/>}/>
         <Route path="/cart" element={<Cart/>} />
         <Route path="/product" element={ <AllProducts /> } />
