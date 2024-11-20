@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { BaseUrl, userLogin } from "../constant/Api";
+import { BaseUrl, userLogin } from "../Constant/Api";
 import { jwtDecode } from "jwt-decode";
 
 
@@ -35,6 +35,10 @@ const Login = () => {
       console.log(accessToken)
       localStorage.setItem('accessToken',accessToken);
       const decodeToken = jwtDecode(accessToken)
+
+      const userId = decodeToken.user_id
+      localStorage.setItem("userId",userId)
+      // console.log(userId)
 
       // localStorage.setItem('userId',decode.user_id)
       console.log(decodeToken)

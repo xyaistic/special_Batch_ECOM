@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { addItemTocart, BaseUrl ,} from '../Constant/Api';
+import { addItemTocart, BaseUrl, userLogin ,} from '../Constant/Api';
 import ConfirmedOrder from './ConfirmedOrder';
 
 
 export default function SingleProduct() {
   const [count, setCount ] = useState(1);
-  const userId = 1;
+  // const userId = 1;
+  
 
   const QuantityAdd = () =>{
     if(data.stock>count){
@@ -27,12 +28,14 @@ export default function SingleProduct() {
   // console.log(data)
 
   const AddtoCart = async () =>{
+    const user_id = localStorage.getItem("userId")
+
     try {
       const orderDetail={
-        user_id : userId,
+        user_id : user_id,
         quantity: count,
         product : data.product_id, 
-        cart_total: count*data.price,
+        // cart_total: count*data.price,
         cart: 1
       }
       const response = await axios.post(`${BaseUrl}${addItemTocart}`,orderDetail)
@@ -50,7 +53,7 @@ export default function SingleProduct() {
     <div  className= "lg-flex-row flex justify-between w-full">
       <div className='flex flex-control justify-center items-center w-1/2 '> 
 <img 
-src={`${BaseUrl}${data.image}`} 
+src={`${BaseUrl}${data.images}`} 
 alt={data.title} 
 className="w-full h-32 object-cover mb-4 rounded" />
      
