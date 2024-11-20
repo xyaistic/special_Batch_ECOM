@@ -11,7 +11,9 @@ import Layout from "./Components/Layout";
 import RegistrationPage from "./Components/Registration";
 // import Authentication from "./Components/authentication";
 import PlaceOrder from "./Components/PlaceOrder";
-
+import SingleProduct from "./Components/SingleProduct";
+import ConfirmedOrder from "./Components/ConfirmedOrder";
+import FailedOrder from "./Components/FailedOrder";
 function App() {
   // let token = localStorage.getItem("token");
 
@@ -30,6 +32,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<RegistrationPage/>}/>
         <Route path="/placeorder" element={<PlaceOrder/>}/>
+        <Route path="/SingleProduct" element={<SingleProduct/>}/>
+        <Route path="/ConfirmedOrder" element={<ConfirmedOrder/>}/>
+        <Route path="/FailedOrder" element={<FailedOrder/>}/>
+        
       </Routes>
     </>
   );
