@@ -14,7 +14,7 @@ function ProductCard({ product }) {
       console.log("hello world");
       navigate('/SingleProduct', {state: {SingleProduct: SingleProduct}})
     }
-
+console.log(product,'//////')
 
   let token = "token"
   return (
@@ -24,7 +24,7 @@ function ProductCard({ product }) {
       
       <div className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl flex flex-col justify-between">
         <div className='justify-center items-center'>
-          <img src={`${BaseUrl}${product.image}`} alt={product.title} className="w-full h-32 object-cover mb-4 rounded" />
+          <img src={`${BaseUrl}${product.images}`} alt={product.title} className="w-full h-32 object-cover mb-4 rounded" />
           <h2 className="text-sm text-left w-full font-semibold mb-2">{product.title}</h2>
           {/* <p className="text-gray-500 text-left w-full mb-4">${product.price}</p> */}
           <h1>{product.product_name}</h1>

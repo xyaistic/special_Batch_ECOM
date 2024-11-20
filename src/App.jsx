@@ -9,7 +9,6 @@ import Category from "./Components/Category";
 import Login from "./Components/Login";
 import Layout from "./Components/Layout";
 import RegistrationPage from "./Components/Registration";
-// import Authentication from "./Components/authentication";
 import PlaceOrder from "./Components/PlaceOrder";
 import SingleProduct from "./Components/SingleProduct";
 import ConfirmedOrder from "./Components/ConfirmedOrder";
@@ -22,8 +21,7 @@ function App() {
     
     <Layout/>
       <Routes>
-        {/* <Route path="/" element={<Layout/>}/> */}
-        <Route path="/home"element={<Home/>}/>
+        <Route path="/"element={<Home/>}/>
         <Route path="/cart" element={<Cart/>} />
         <Route path="/product" element={ <AllProducts /> } />
         <Route path="/profile" element={ <Profile /> } />
