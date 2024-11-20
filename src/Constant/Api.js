@@ -5,6 +5,6 @@ export const getAllProduct  = 'products/'
 export const createUser = 'register/'
 export const userLogin = 'login/'
 export const addItemTocart = 'cartitem/'
-export const getCart = ''
+export const getCart = '/cart'
 
 

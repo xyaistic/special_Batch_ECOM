@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { addItemTocart, BaseUrl, userLogin ,} from '../Constant/Api';
 import ConfirmedOrder from './ConfirmedOrder';
@@ -21,6 +22,10 @@ export default function SingleProduct() {
       setCount(count-1);
     }
   }
+
+ const navigate = useNavigate () 
+
+  
     
 
   const location = useLocation();
@@ -28,8 +33,24 @@ export default function SingleProduct() {
   // console.log(data)
 
   const AddtoCart = async () =>{
-    const user_id = localStorage.getItem("userId")
 
+
+    const userToken = localStorage.getItem(`accessToken`)
+
+
+    if (userToken!=null) {
+      console.log("yes");
+      
+      navigate("/cart")
+    }else{
+      navigate("/login")
+      console.log("no");
+      
+    }
+
+
+
+    const user_id = localStorage.getItem("userId")
     try {
       const orderDetail={
         user_id : user_id,
@@ -44,6 +65,11 @@ export default function SingleProduct() {
     } catch (error) {
       alert(error)
     }
+
+
+
+
+
   }
   
 
@@ -94,4 +120,4 @@ className="w-full h-32 object-cover mb-4 rounded" />
 }
 
 
-
+// AddtoCart
