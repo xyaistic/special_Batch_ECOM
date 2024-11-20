@@ -17,7 +17,6 @@ function ProductCard({ product }) {
 
 
   let token = "token"
-
   return (
   
  <>

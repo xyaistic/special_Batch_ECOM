@@ -10,6 +10,7 @@ import Category from './Components/Category'
 import Registration from './Components/Registration'
 import SingleProduct from './Components/SingleProduct'
 import ConfirmedOrder from './Components/ConfirmedOrder'
+import FailedOrder from './Components/FailedOrder'
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path='/SingleProduct' element={<SingleProduct/>} />
         <Route path='/registration' element={<Registration/>} />
         <Route path='/ConfirmedOrder' element={<ConfirmedOrder/>} />
+        <Route path='/FailedOrder' element={<FailedOrder/>} />
        
         
       </Routes>
