@@ -4,5 +4,7 @@ export const getCategories = 'categories/'
 export const getAllProduct  = 'products/'
 export const createUser = 'register/'
 export const userLogin = 'login/'
+export const addItemTocart = 'cartitem/'
+export const getCart = ''
 
 
